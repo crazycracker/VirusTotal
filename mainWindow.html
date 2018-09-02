@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VirusTotal</title>
+    <script>
+        window.jQuery = window.$ = require('jquery');
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./styles/fileReader.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script type="text/javascript" src="./linkers/scanFile.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <h1>Virus Total Scanner</h1>
+        </div>
+        <label for="apiKey"><i>Your Api Key</i></label>
+        <input type="text" class="form-control" id="apiKey" aria-describedby="basic-addon3" style="width: 100%; margin-bottom: 5%;">
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#home">Scan File</a></li>
+            <li><a data-toggle="pill" href="#menu1">Scan Url</a></li>
+            <li><a data-toggle="pill" href="#menu2">Get Reports</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <div id="scanFile" class="col s12">
+                    <label class="btn btn-default">
+                        Browse File <input type="file" id="files" hidden/>
+                    </label>
+                    <span class="readBytesButtons">
+                        <button class="btn btn-success" style="margin:10px 10px 10px 10px;">View File Contents</button>
+                    </span>
+                    <button class="btn btn-success" onclick="scanFile();" style="margin:10px 10px 10px 0px;">Scan file</button>
+                    <div id="byte_range" class="text-success"></div>
+                    <div id="byte_content" class="text-success"></div>
+                    <div class="col s12" style="margin:10px 10px 10px 10px;">
+                        <label>Resource Value</label><div id="fileResource"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <div id="scanUrl" class="col s12">
+                    <input type="text" id="urls" name="url" class="form-control" placeholder="Enter Url" />
+                </div>
+                <span class="readBytesButtonsUrl">
+                    <button class="btn btn-success" style="margin:10px 10px 10px 10px;"> entire Url</button>
+                </span>
+                <button onclick="scanUrl();" class="btn btn-success" style="margin:10px 10px 10px 0px;">Scan Url</button>
+                <div id="byte_range_url" class="text-success"></div>
+                <div id="byte_content_url" class="text-success"></div>
+                <div class="col s12" style="margin:10px 10px 10px 10px;">
+                    <label>Resource Value</label><div id="urlResource"></div>
+                </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <div id="getFileReport" class="col s12">
+                    <input type="text" id="fileResourceValue" placeholder="Enter the file resource value" class="form-control">
+                    <button class="btn btn-success" onclick="getFileReports();">Get File Reports</button>
+                </div>
+                <div id="getUrlReport" class="col s12">
+                    <input type="url" id="urlResourceValue" placeholder="Enter url resource" class="form-control">
+                    <button class="btn btn-success" onclick="getUrlReports();">Get Url Reports</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./linkers/fileReader.js"></script>
+    <script type="text/javascript" src="./linkers/urlReader.js"></script>
+</body>
+
+</html>

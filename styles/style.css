@@ -1,0 +1,73 @@
+#home {
+  margin-top: 5%;
+  position: relative;
+}
+
+#menu1 {
+  margin-top: 5%;
+}
+#menu2 {
+  margin-top: 5%;
+}
+#menu3 {
+  margin-top: 5%;
+}
+
+body {
+  background-color: lightgray;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 15px;
+}
+
+[hidden] {
+  display: none !important;
+}
+#files {
+  margin-top: 05%;
+  margin-bottom: 03%;
+}
+
+#byte_range {
+  background-color: whitesmoke;
+}
+
+#byte_content {
+  background-color: whitesmoke;
+}
+.jumbotron {
+  position: relative;
+  padding: 0 !important;
+  margin-top: 30px !important;
+  background: #eee;
+  margin-top: 23px;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+#getFileReport {
+  margin-top: 05%;
+  margin-bottom: 03%;
+}
+
+#getUrlReport {
+  margin-top: 05%;
+  margin-bottom: 03%;
+}
+
+#urls {
+  width: 70%;
+  margin-bottom: 2%;
+}
+
+.btn btn-success {
+  padding: 10% !important;
+}
+
+#fileResourceValue {
+  margin-bottom: 2%;
+}
+
+#urlResourceValue {
+  margin-bottom: 2%;
+}
